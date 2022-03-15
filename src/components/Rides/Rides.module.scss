@@ -1,0 +1,46 @@
+@mixin tab {
+  text-transform: none;
+  font-style: normal;
+  font-size: 18px;
+  line-height: 22px;
+}
+
+@mixin responsiveTab {
+  font-size: 16px;
+}
+
+.ridesContainer {
+  background-color: #292929;
+  margin: 0;
+  padding: 31px 43px;
+  .tabsContainer {
+    background-color: #292929;
+    .singleTab {
+      color: #d0cbcb;
+      font-weight: 400;
+      @include tab;
+    }
+    .newColor {
+      color: #ffffff;
+      font-weight: 700;
+      @include tab;
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .ridesContainer {
+    padding: 10px;
+
+    .tabsContainer {
+      background-color: #292929;
+
+      .singleTab {
+        @include responsiveTab;
+      }
+      .newColor {
+        @include responsiveTab;
+      }
+    }
+  }
+}
